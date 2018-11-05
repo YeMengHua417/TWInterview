@@ -1,0 +1,38 @@
+@media screen and (min-width: 1024px) {
+  .grid-container{
+    grid-template-columns: [line1] 250px [line2] auto [line3];
+    grid-template-rows: [row1] 60px [row2] 700px [row3] 30px [row4];
+    .header{
+      padding: 0 50px;
+      .nav{
+        opacity: 0;
+      }
+    }
+
+    .main{
+      padding: 20px 10px;
+      grid-column: line2 / line3;
+      grid-row: row2 / row3;
+      .dashboard{
+        display: grid;
+        grid-column-gap:20px;
+        grid-template-columns: [line1] auto [line2] auto [line3] auto [line4];
+      }
+      .detail{
+
+        .grid-pic{
+          display: none;
+        }
+        padding:0 10px;
+        height: 106px;
+        grid-template-columns: [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
+      }
+
+    }
+    .siderbar{
+      display: grid;
+      grid-column: line1 / line2;
+      grid-row: row2 / row3;
+    }
+  }
+}

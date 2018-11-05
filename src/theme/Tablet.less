@@ -1,0 +1,25 @@
+@media screen and (min-width: 768px) {
+  .grid-container{
+    grid-template-columns: [line1] 0px [line2] auto [line3];
+    grid-template-rows: [row1] 60px [row2] 700px [row3] 30px [row4];
+    .main{
+      padding: 20px 10px;
+      grid-column: line1 / line3;
+      grid-row: row2 / row3;
+      .detail{
+        .grid-pic{
+          display: none;
+        }
+        padding:0 12px 0 8px;
+        height: 110px;
+        grid-template-columns: [line2] 290px [line3] 94px [line4] 134px [line5] auto [line6];
+      }
+    }
+    .siderbar{
+      display: none;
+      grid-column: line1 / line2;
+      grid-row: row2 / row3;
+    }
+
+  }
+}

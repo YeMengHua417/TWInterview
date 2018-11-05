@@ -1,0 +1,259 @@
+@import '../theme/color';
+
+
+
+.btn-add-resource {
+  cursor: pointer;
+  width: 110px;
+  height: 30px;
+  color: @white;
+  background-color: @blue;
+
+  text-align: center;
+  &:hover{
+    background-color: @darkBlue;
+  }
+
+}
+
+.btn-cancle {
+  cursor: pointer;
+  width: 110px;
+  height: 30px;
+  color: @white;
+  background-color: @lightDark;
+
+  text-align: center;
+  &:hover{
+    background-color: @darkBlack;
+  }
+
+}
+
+.btn-deny {
+
+  cursor: pointer;
+  display: inline-block;
+  width: 75px;
+  height: 27px;
+  line-height: 27px;
+  color: @white;
+  background-color: @blue;
+  .icon{
+    margin-right: 5px;
+  }
+  text-align: center;
+  &:hover{
+    background-color: @darkBlue;
+  }
+
+}
+
+.btn-add{
+  margin-bottom: 8px;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  color: @white;
+  background-color: @blue;
+
+  text-align: center;
+  &:hover{
+    background-color: @darkBlue;
+  }
+  .icon{
+    line-height: 25px;
+  }
+}
+
+
+
+.pannel(@color,@content){
+  display: inline-block;
+  position: relative;
+  height: 144px;
+  background-color: @color;
+  text-align: center;
+  .icon{
+    font-size: 144px;
+    opacity: 0.2;
+    color: @white;
+  }
+  &:before{
+    left: 5%;
+    position: absolute;
+    font: 18px bold;
+    color: @white;
+    content:@content
+  }
+  span{
+    color: @white;
+    font-size: 48px;
+  }
+}
+
+.idle{
+  .pannel(@green,'Idle')
+}
+
+.total-result{
+  .pannel(@white,'');
+  display: grid;
+  grid-template-rows: [line1] auto [line2] auto [line3];
+  grid-template-columns: [row1] auto [row2] auto [row3] auto [row4];
+  align-content: space-around;
+}
+
+.building{
+  .pannel(@orange,'Building');
+  .play{
+    display: inline-block;
+    -webkit-animation: icon-running 4s linear infinite;
+    -o-animation: icon-running 4s linear infinite;
+    animation: icon-running 4s linear infinite;
+  }
+}
+
+@-webkit-keyframes icon-running {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes icon-running {
+  from {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.tabs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  //justify-items: center;
+  //align-items: center;
+  //width: 240px;
+  height: 50px;
+  .active-tab{
+    color: @blue;
+    border-bottom: 3px solid @blue;
+  }
+  .tab{
+    text-align: center;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    border-right: 1px solid #EFEFEF;
+    padding-top: 15px;
+    &:hover{
+      color: @blue;
+      border-bottom: 3px solid @blue;
+    }
+
+  }
+}
+
+
+
+
+.build-status{
+  text-align: center;
+  width: 60px;
+  height: 20px;
+  line-height: 20px;
+  background-color: @orange;
+  color: @white;
+  &:before{
+    content: 'building';
+  }
+}
+
+.idle-status{
+  text-align: center;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  background-color: @green;
+  color: @white;
+  &:before{
+    content: 'idle';
+  }
+}
+
+.browser-type{
+  margin-right: 5px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  text-align: center;
+  background-color: @gray;
+  width: 77px;
+  line-height: 25px;
+  height: 25px;
+  color: @darkBlack;
+}
+
+.avatar{
+  vertical-align: text-bottom;
+  border-radius:50% ;
+  width: 40px;
+  height: 40px;
+  background: url(../images/avatar.png) no-repeat center;
+  position: relative;
+  display: inline-block;
+}
+
+
+.drop-down{
+  display: none;
+  top: 40px;
+  left: -80px;
+  list-style-type: none;
+  z-index: 100;
+  position: absolute;
+  padding: 14px 0;
+  width: 140px;
+  background-color: @white;
+  text-align: center;
+
+  -webkit-box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  i{
+    margin: 0 10px;
+  }
+  li{
+    text-align: left;
+    line-height: 30px;
+    height: 30px;
+    &:hover{
+      background-color: @lightGray;
+    }
+  }
+
+}
+
+.avatar:hover{
+  .drop-down{
+    display: block;
+  }
+}
+
+.icon-trash{
+  margin-left: 3px;
+}
